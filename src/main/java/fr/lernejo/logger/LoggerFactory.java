@@ -1,12 +1,9 @@
 package fr.lernejo.logger;
 
-public class LoggerFactory  {
-    private static ConsoleLogger logger;
+import org.jetbrains.annotations.NotNull;
 
-    public static Logger getLogger() {
-        if (logger == null) {
-            logger = new ConsoleLogger();
-        }
-        return logger;
+public class LoggerFactory  {
+    public static @NotNull Logger getLogger(Class<?> callerClass, String name) {
+        return new ContextualLogger(callerClass, (new FileLogger(System.getProperty("user.home") + "/Desktop/file.txt")));
     }
 }

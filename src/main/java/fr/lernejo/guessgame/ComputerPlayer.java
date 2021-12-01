@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class ComputerPlayer implements Player {
-    private final Logger logger = LoggerFactory.getLogger();
+    private final Logger logger = LoggerFactory.getLogger(ComputerPlayer.class, "ComputerPlayer");
 
     private final String name;
     private long nbGuess;
