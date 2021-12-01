@@ -21,11 +21,11 @@ public class Simulation {
      * @return true if the player have guessed the right number
      */
     private boolean nextRound() {
-        this.player.playerGuessNumber();
+        this.player.playerGuessNumber(System.in);
         
         if (this.player.getNbGuess() == this.numberToGuess) {
             return true;
-        }else {
+        }else{
             if(this.player.getNbGuess() > this.numberToGuess){
                 logger.log("Number " + this.player.getNbGuess() + " is too high");
             }
@@ -40,7 +40,6 @@ public class Simulation {
         int nbTry = 0;
         while (!nextRound()) {
             nbTry++;
-
         }
         logger.log("Number " + this.numberToGuess + " is the right one, it took " + nbTry + " try");
     }
