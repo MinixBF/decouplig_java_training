@@ -1,5 +1,6 @@
 package fr.lernejo.guessgame;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class HumanPlayer implements Player {
@@ -19,10 +20,18 @@ public class HumanPlayer implements Player {
         return nbGuess;
     }
 
-    public void playerGuessNumber() {
-        Scanner scanner = new Scanner(System.in);
+    public void playerGuessNumber(InputStream in) {
+        Scanner scanner = new Scanner(in);
         System.out.println("What is your guess ?");
-        this.nbGuess = scanner.nextLong();
+        try {
+            this.nbGuess = scanner.nextLong();
+        }
+        catch (Exception e) {
+            this.nbGuess = 0;
+            System.out.println("Please enter a number");
+            // throw  new IllegalArgumentException("Invalid number");
+        }
+
     }
 
     @Override
