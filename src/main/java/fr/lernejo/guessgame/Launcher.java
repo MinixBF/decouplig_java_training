@@ -10,26 +10,26 @@ public class Launcher {
         final Logger logger = LoggerFactory.getLogger(Launcher.class, "GuessGame");
         System.out.println("Welcome to the Guess Capatain Age");
         switch (args.length) {
-            case 0 -> logger.log("no arguments to launch the game, restart the program with arguments (-interactive or -auto and number)");
+            case 0 -> logger.log(Error.NO_ARGS.toString());
             case 1 -> {
                 if (args[0].equals("-interactive")) {
                     HumanPlayer humanPlayer = new HumanPlayer("Sarah");
                     start(humanPlayer, Long.MAX_VALUE, 100L);
                 }
                 else {
-                    logger.log("unknown argument, restart the program with arguments (-interactive or -auto and number)");
+                    logger.log(Error.UNKNOWN_ARGS.toString());
                 }
             }
             case 2 -> {
                 if (args[0].equals("-auto")) {
                     ComputerPlayer computerPlayer = new ComputerPlayer("Roger");
-                    start(computerPlayer, 1000, null);
+                    start(computerPlayer, 1000, Long.parseLong(args[1]));
                 }
                 else {
-                    logger.log("unknown argument, restart the program with arguments (-interactive or -auto and number)");
+                    logger.log(Error.UNKNOWN_ARGS.toString());
                 }
             }
-            default -> logger.log("invalid arguments to launch the game, restart the program with arguments (-interactive or -auto and number)");
+            default -> logger.log(Error.INVALID_ARGS.toString());
         }
     }
 

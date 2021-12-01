@@ -34,7 +34,7 @@ public class HumanPlayer implements Player {
         }
         catch (Exception e) {
             this.nbGuess = 0;
-            System.out.println("Please enter a number");
+            logger.log(Error.INVALID_INPUT.toString());
             // throw  new IllegalArgumentException("Invalid number");
         }
     }
