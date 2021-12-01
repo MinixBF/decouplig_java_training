@@ -6,14 +6,13 @@ import fr.lernejo.logger.LoggerFactory;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class HumanPlayer implements Player {
+public class ComputerPlayer implements Player {
     private final Logger logger = LoggerFactory.getLogger();
 
     private final String name;
     private long nbGuess;
 
-
-    public HumanPlayer(String name) {
+    public ComputerPlayer(String name) {
         this.name = name;
         this.nbGuess = 0;
     }
@@ -26,17 +25,9 @@ public class HumanPlayer implements Player {
         return nbGuess;
     }
 
+    @Override
     public void playerGuessNumber() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("What is your guess ?");
-        try {
-            this.nbGuess = scanner.nextLong();
-        }
-        catch (Exception e) {
-            this.nbGuess = 0;
-            System.out.println("Please enter a number");
-            // throw  new IllegalArgumentException("Invalid number");
-        }
+        this.nbGuess ++;
     }
 
     @Override
