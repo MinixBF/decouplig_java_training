@@ -3,9 +3,6 @@ package fr.lernejo.guessgame;
 import fr.lernejo.logger.Logger;
 import fr.lernejo.logger.LoggerFactory;
 
-import java.io.InputStream;
-import java.util.Scanner;
-
 public class ComputerPlayer implements Player {
     private final Logger logger = LoggerFactory.getLogger(ComputerPlayer.class, "ComputerPlayer");
 

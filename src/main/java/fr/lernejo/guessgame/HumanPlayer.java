@@ -3,7 +3,6 @@ package fr.lernejo.guessgame;
 import fr.lernejo.logger.Logger;
 import fr.lernejo.logger.LoggerFactory;
 
-import java.io.InputStream;
 import java.util.Scanner;
 
 public class HumanPlayer implements Player {
