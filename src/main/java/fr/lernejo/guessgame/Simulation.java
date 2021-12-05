@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Simulation {
 
-    private final Logger logger = LoggerFactory.getLogger(Simulation.class, "Simulation");
+    private final Logger logger = LoggerFactory.getLogger(Simulation.class.getName());
     private final Player player;
     public long numberToGuess;
     private boolean isPlayerWin = false;

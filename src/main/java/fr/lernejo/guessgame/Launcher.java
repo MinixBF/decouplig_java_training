@@ -7,7 +7,7 @@ import java.security.SecureRandom;
 
 public class Launcher {
     public static void main(String[] args) {
-        final Logger logger = LoggerFactory.getLogger(Launcher.class, "GuessGame");
+        final Logger logger = LoggerFactory.getLogger(Launcher.class.getName());
         System.out.println("Welcome to the Guess Capatain Age");
         switch (args.length) {
             case 0 -> logger.log(Error.NO_ARGS.toString());

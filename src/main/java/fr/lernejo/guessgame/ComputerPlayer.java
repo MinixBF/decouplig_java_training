@@ -4,7 +4,7 @@ import fr.lernejo.logger.Logger;
 import fr.lernejo.logger.LoggerFactory;
 
 public class ComputerPlayer implements Player {
-    private final Logger logger = LoggerFactory.getLogger(ComputerPlayer.class, "ComputerPlayer");
+    private final Logger logger = LoggerFactory.getLogger(ComputerPlayer.class.getName());
 
     private final String name;
     private long nbGuess;
