@@ -29,6 +29,6 @@ public class ComputerPlayer implements Player {
 
     @Override
     public void respond(boolean lowerOrGreater) {
-        logger.log("Number " + this.getNbGuess() + " is " + (lowerOrGreater ? "lower" : "greater"));
+       // logger.log("Number " + this.getNbGuess() + " is " + (lowerOrGreater ? "lower" : "greater"));
     }
 }
