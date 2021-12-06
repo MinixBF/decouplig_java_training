@@ -46,11 +46,10 @@ public class Simulation {
         }
         String pattern = "mm:ss.SSS";
         String time = " Released in : " + new SimpleDateFormat(pattern).format(new Date(System.currentTimeMillis() - start));
-        if(isPlayerWin){
-            logger.log("Number " + this.numberToGuess + " is the right one, it took " + nbTry + " try" + time);
-        }else {
-            logger.log("Number to guess is : " + this.numberToGuess + time);
+        if (isPlayerWin){
+            logger.log("win : Number " + this.numberToGuess + " is the right one, it took " + nbTry + " try" + time);
+        } else {
+            logger.log("end : Number to guess is : " + this.numberToGuess + time);
         }
     }
-
 }
